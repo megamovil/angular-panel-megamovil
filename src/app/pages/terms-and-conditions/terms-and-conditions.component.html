@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Terminos y condiciones</h4>
+          <a class="btn btn-primary" [routerLink]="['/terminosycondiciones/create']">Agregar</a>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  
+                  <th>Link</th>
+                  <!-- <th></th> -->
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let termCondition of termsConditions">
+                  
+                  <td>{{termCondition.link}}</td>
+                  
+                   
+                  <!-- <td><a class="btn btn-primary" [routerLink]="['/terminosycondiciones/edit/'+termCondition.id]">Editar</a></td> -->
+                  <td><a class="btn btn-primary" (click)="delete(termCondition.id)">Eliminar</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    
+  </div>
+  

@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Privilegios</h4>
+          <a class="btn btn-primary" [routerLink]="['/privilegios/create']"
+            >Agregar usuario</a
+          >
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Nombre de usuario</th>
+                  <th>Rol</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of users">
+                  <td>{{ user.username }}</td>
+                  <td>{{ user.rol }}</td>
+                  <td>
+                    <a
+                      class="btn btn-primary"
+                      [routerLink]="['/privilegios/edit/' + user.id]"
+                      >Editar</a
+                    >
+                  </td>
+                  <td>
+                    <a
+                      class="btn btn-danger"
+                      (click)="delete(user.id)"
+                      >Eliminar</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

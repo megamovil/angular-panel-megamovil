@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Categoria de Inicio</h4>
+        <a class="btn btn-primary" [routerLink]="['/categoriaInicio/create']"
+          >Agregar categoria</a
+        >
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let categoryBegin of categoriesBegin">
+                <td>{{ categoryBegin.name }}</td>
+
+                <td>
+                  <a
+                    class="btn btn-primary"
+                    [routerLink]="['/categoriaInicio/edit/' + categoryBegin.id]"
+                    >Editar</a
+                  >
+                </td>
+                <td>
+                  <a
+                    class="btn btn-primary"
+                    (click)="delete(categoryBegin.id)"
+                    >Eliminar</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

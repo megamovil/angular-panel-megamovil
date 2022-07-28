@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">{{titulo}}</h4>
+        </div>
+        <div class="card-body">
+          <form novalidate (ngSubmit)="handle()">
+            
+            
+              <div class="col">
+                <label for="name">Subir archivo </label>
+                <div>
+                    <input
+                  type="file"
+                  (change) = "changeFile($event)"
+                  
+                  class="file-input"
+                  placeholder="Ingrese su imagen"
+                />
+                </div>
+                
+              </div>
+              
+              
+  
+            <button type="submit" class="btn btn-primary">{{buttonText}}</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

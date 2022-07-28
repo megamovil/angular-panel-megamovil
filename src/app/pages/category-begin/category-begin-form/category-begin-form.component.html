@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">{{titulo}}</h4>
+        </div>
+        <div class="card-body">
+          <form novalidate (ngSubmit)="handle()">
+            
+            
+            <div class="col-4">
+                <label for="name">Nombre</label>
+                <input
+                  type="text"
+                  [(ngModel)]="categoryBegin.name"
+                  class="form-control"
+                  placeholder="Nombre"
+                />
+              </div>
+              
+              
+  
+            <button type="submit" class="btn btn-primary">{{buttonText}}</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

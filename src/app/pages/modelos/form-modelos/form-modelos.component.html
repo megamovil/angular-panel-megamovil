@@ -1,0 +1,247 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">{{titulo}}</h4>
+      </div>
+      <div class="card-body">
+        <form novalidate (ngSubmit)="handle()">
+          <div class="row">
+            <div class="col">
+              <label for="name">Nombre</label>
+              <input
+                type="text"
+                [(ngModel)]="modelo.name"
+                class="form-control"
+                placeholder="Ingrese su nombre"
+              />
+            </div>
+            <div class="col">
+              <label for="name">Apellidos</label>
+              <input
+                type="text"
+                [(ngModel)]="modelo.lastName"
+                class="form-control"
+                placeholder="Ingrese su nombre"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <label for="name">Alcaldia</label>
+              <select
+                name="model"
+                [(ngModel)]="modelo.townHall"
+                id=""
+                class="form-control" 
+              >
+                <option value="Perú">Aguascaliente</option>
+                <option value="México">Baja California</option>
+                <option value="USA">Baja California sur</option>
+                <option value="Venezuela">Campeche</option>
+                <option value="Ecuador">Chiapas</option>
+                <option value="Colombia">Chihuahua</option>
+                <option value="Ciudad de México">Ciudad de México</option>
+                <option value="Coahuila">Coahuila</option>
+                <option value="Colima">Colima</option>
+                <option value="Durango">Durango</option>
+                <option value="Estado de México">Estado de México</option>
+                <option value="Guanajuato">Guanajuato</option>
+                <option value="Guerrero">Guerrero</option>
+                <option value="Hidalgo">Hidalgo</option>
+                <option value="Jalisco">Jalisco</option>
+                <option value="Michoacán">Michoacán</option>
+                <option value="Morelos">Morelos</option>
+                <option value="Nayarit">Nayarit</option>
+                <option value="Nuevo León">Nuevo León</option>
+                <option value="Oaxaca">Oaxaca</option>
+                <option value="Puebla">Puebla</option>
+                <option value="Querétano">Querétano</option>
+                <option value="Quintana Roo">Quintana Roo</option>
+                <option value="San Luis Potosí">San Luis Potosí</option>
+                <option value="Sinaloa">Sinaloa</option>
+                <option value="Sonora">Sonora</option>
+                <option value="Tabasco">Tabasco</option>
+                <option value="Tamaulipas">Tamaulipas</option>
+                <option value="Tlaxcala">Tlaxcala</option>
+                <option value="Veracruz">Veracruz</option>
+                <option value="Yucatán">Yucatán</option>
+                <option value="Zacatecas">Zacatecas</option>
+              </select>
+            </div>
+
+            <div class="col">
+              <label for="name">Modelo</label>
+              <select
+                name="model"
+                [(ngModel)]="modelo.isModel"
+                id=""
+                class="form-control" 
+              >
+                <option value="true">si</option>
+                <option value="false">no</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <label for="name">Nacionalidad</label>
+              <select
+                name="model"
+                [(ngModel)]="modelo.nationality"
+                id=""
+                class="form-control" 
+              >
+                <option value="Perú">Perú</option>
+                <option value="México">México</option>
+                <option value="USA">USA</option>
+                <option value="Venezuela">Venezuela</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Colombia">Colombia</option>
+              </select>
+            </div>
+            <div class="col">
+              <label for="name">Talla</label>
+              <select
+                name="model"
+                [(ngModel)]="modelo.size"
+                id=""
+                class="form-control" 
+              >
+                <option value="pequeño">pequeño</option>
+                <option value="mediano">mediano</option>
+                <option value="grande">grande</option>
+              </select>
+            </div>
+            <div class="col-4">
+              <label for="name">Estatura</label>
+              <input
+                type="text"
+                [(ngModel)]="modelo.height"
+                class="form-control"
+                placeholder="Ingrese su Estatura"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <label for="name">Fecha de nacimiento</label>
+              <input
+                type="date"
+                [(ngModel)]="modelo.dateOfBirth"
+                class="form-control"
+                placeholder="Ingrese su Fecha de nacimiento"
+              />
+            </div>
+            <div class="col-4">
+              <label for="name">Genero</label>
+              <input
+                type="text"
+                [(ngModel)]="modelo.gender"
+                class="form-control"
+                placeholder="Ingrese su Genero"
+              />
+            </div>
+            <div class="col-4">
+              <label for="name">Seguro social</label>
+              <input
+                type="text"
+                [(ngModel)]="modelo.socialSecurity"
+                class="form-control"
+                placeholder="Ingrese su social"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <label for="name">Color de ojos</label>
+              <input
+                type="text"
+                [(ngModel)]="modelo.eyesColor"
+                class="form-control"
+                placeholder="Ingrese su Color de ojos"
+              />
+            </div>
+            <div class="col-4">
+              <label for="name">Color de piel</label>
+              <input
+                type="text"
+                [(ngModel)]="modelo.skinColor"
+                class="form-control"
+                placeholder="Ingrese su Color de piel"
+              />
+            </div>
+            <div class="col-4">
+              <label for="name">Color de cabello</label>
+              <input
+                type="text"
+                [(ngModel)]="modelo.hairColor"
+                class="form-control"
+                placeholder="Ingrese su Color de cabello"
+              />
+            </div>
+          </div>
+          <br>
+          <h6>Fotos de Portafolio</h6>
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label  class="form-label">Foto 1</label>
+                <input class="form-control" (change)="changeFilePhotoone($event)" type="file" id="formFile">
+              </div>
+            </div>
+            <div class="col">
+              <div class="mb-3">
+                <label  class="form-label">Foto 2</label>
+                <input class="form-control" (change)="changeFilePhototwo($event)" type="file" id="formFile">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label  class="form-label">Foto 3</label>
+                <input class="form-control" (change)="changeFilePhotothree($event)" type="file" id="formFile">
+              </div>
+            </div>
+            <div class="col">
+              <div class="mb-3">
+                <label  class="form-label">Foto 4</label>
+                <input class="form-control" (change)="changeFilePhotofour($event)" type="file" id="formFile">
+              </div>
+            </div>
+          </div>
+          <h6>Añadir INE</h6>
+          <div class="mb-3">
+            <label  class="form-label">INE</label>
+            <input class="form-control" (change)="changeFileIne($event)" type="file" id="formFile">
+          </div>
+          <h6>Añadir comprobante de domicilio</h6>
+          <div class="mb-3">
+            <label  class="form-label">Comprobante de domicilio</label>
+            <input class="form-control" (change)="changeFileVoucherOfHouse($event)" type="file" id="formFile">
+          </div>
+          <h6>Añadir estado de cuenta</h6>
+          <div class="mb-3">
+            <label  class="form-label">Estado de cuenta</label>
+            <input class="form-control"  (change)="changeFileStateOfAccount($event)" observeFiles type="file" id="formFile">
+          </div>
+          <h6>Añadir RFC</h6>
+          <div class="mb-3">
+            <label  class="form-label">RFC</label>
+            <input class="form-control" (change)="changeFileRfc($event)" type="file" id="formFile">
+          </div>
+          <h6>Añadir TU FM2</h6>
+          <div class="mb-3">
+            <label  class="form-label">FM2</label>
+            <input class="form-control" (change)="changeFileFm2($event)"  type="file" id="formFile">
+          </div>
+          <button type="submit" class="btn btn-primary">{{buttonText}}</button>
+        </form>
+      </div>
+      <button (click)="test()">test</button>
+    </div>
+  </div>
+</div>

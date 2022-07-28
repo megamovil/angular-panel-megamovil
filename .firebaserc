@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "modeloapp-f2f80": {
+      "hosting": {
+        "pd-free-angularcli": [
+          "modeloapp-f2f80"
+        ]
+      }
+    },
+    "megamovil-d82dd": {
+      "hosting": {
+        "pd-free-angularcli": [
+          "megamovil-d82dd"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "megamovil-d82dd"
+  }
+}

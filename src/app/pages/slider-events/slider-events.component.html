@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Slider Evento</h4>
+          <a class="btn btn-primary" [routerLink]="['/slidersEvento/create']">Crear slider</a>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Imagen</th>
+                  <th>Link</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let sliderEvent of slidersEvent">
+                  <td><img src="{{sliderEvent.link}}" alt="" height="70px"></td>
+                  <td>{{sliderEvent.link}}</td>
+                  
+                   
+                  <td><a class="btn btn-primary" [routerLink]="['/slidersEvento/edit/'+sliderEvent.id]">Editar</a></td>
+                  <td><a class="btn btn-primary" (click)="delete(sliderEvent.id)">Eliminar</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    
+  </div>
+  

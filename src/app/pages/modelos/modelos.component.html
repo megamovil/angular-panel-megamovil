@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Modelos</h4>
+        <a class="btn btn-primary" [routerLink]="['/modelos/create']">Registrar modelo</a>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Genero</th>
+                <th>Nacionalidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let model of modelos">
+                <td>{{model.name}}</td>
+                <td>{{model.lastName}}</td>
+                <td>{{model.gender}}
+                  <td>{{model.nationality}}</td>
+                  <td><a class="btn btn-danger" [routerLink]="['/modelos/details/'+model.id]">Ver</a></td>
+                <td><a class="btn btn-primary" [routerLink]="['/modelos/edit/'+model.id]">Editar</a></td>
+                <td><a class="btn btn-warning" (click)="deleteModel(model.id)">Eliminar</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  
+</div>
