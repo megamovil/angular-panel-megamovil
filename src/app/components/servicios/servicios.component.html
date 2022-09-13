@@ -1,0 +1,22 @@
+<div class="col-12 md">
+  <div class="d-flex justify-content-between align-items-center">
+    <input
+      type="text"
+      class="form-control m-50 mb-4 py-2"
+      [(ngModel)]="filterText"
+      placeholder="Buscador"
+    />
+    <button class="btn btn-primary ml-5" [routerLink]="['/Servicios/create']">Crear servicio</button>
+  </div>
+  <div class="row d-flex  " >
+    <div class="col card m-3" [style]="{'max-width':'350px'}" *ngFor="let servicio of servicios | filter:filterText" >
+      <img src="{{servicio.image}}" alt="" height="150px" />
+      <div [style]="{ display: 'flex' }" class="justify-content-between">
+        <button (click)="deleteData(servicio.id)" class="btn btn-primary"><i class="fa fa-trash"></i></button>
+        <p>{{ servicio.name }}</p>
+        <button class="btn btn-primary" [routerLink]="['/Servicios/edit/'+servicio.id]"><i class="fa fa-edit"></i></button>
+      </div>
+    </div>
+    
+  </div>
+</div>

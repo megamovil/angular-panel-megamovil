@@ -44,8 +44,8 @@ export class ApiService {
     
     return this.storage.ref(fileName);
   }
-  public urlRef(url:string){
-    return this.storage.refFromURL(url);
+  public deleteFile(url:string){
+    return this.storage.refFromURL(url).delete();
   }
   public uploadFile(fileName: string, data: DataInput) {
     return this.storage.upload(fileName, data);

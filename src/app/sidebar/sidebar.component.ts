@@ -9,52 +9,40 @@ export interface RouteInfo {
 
 export const ROUTES: RouteInfo[] = [
   {
-    path: "/recargas",
-    title: "Recargas",
+    path: "/Perfil",
+    title: "Perfil",
     icon: "nc-icon nc-album-2",
     class: "",
   },
   {
-    path: "/servicios",
-    title: "Servicios",
+    path: "/Recargas",
+    title: "Proveedores de Recargas",
+    icon: "nc-icon nc-album-2",
+    class: "",
+  },
+  {
+    path: "/Servicios",
+    title: "Proveedores de Servicios",
     icon: "nc-icon nc-album-2",
     class: "",
   },
   // { path: "/modelos", title: "Modelos", icon: "nc-tile-56", class: "" },
   {
-    path: "/sliderInicio",
-    title: "Slider inicio",
+    path: "/Clientes",
+    title: "Clientes",
     icon: "nc-icon nc-album-2",
     class: "",
   },
   {
-    path: "/slidersEvento",
-    title: "Slider Eventos",
+    path: "/Empleados",
+    title: "Empleados",
     icon: "nc-icon nc-album-2",
     class: "",
   },
   {
-    path: "/categoriaInicio",
-    title: "Categoria Inicio",
+    path: "/Distribuidores",
+    title: "Distribuidores",
     icon: "nc-bell-55",
-    class: "",
-  },
-  {
-    path: "/categoriaEventos",
-    title: "Categoria Eventos",
-    icon: "nc-single-02",
-    class: "",
-  },
-  {
-    path: "/notificaciones",
-    title: "Notificaciones",
-    icon: "nc-single-02",
-    class: "",
-  },
-  {
-    path: "/terminosycondiciones",
-    title: "Terminos y condiciones",
-    icon: "nc-single-02",
     class: "",
   },
   {

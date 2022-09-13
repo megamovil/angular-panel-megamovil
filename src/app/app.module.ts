@@ -18,57 +18,69 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 import { provideStorage,getStorage } from '@angular/fire/storage';
-import { ModelosComponent } from './pages/modelos/modelos.component';
+
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { FormModelosComponent } from './pages/modelos/form-modelos/form-modelos.component';
-import { SliderbeginComponent } from './pages/sliderbegin/sliderbegin.component';
-import { SliderEventsComponent } from './pages/slider-events/slider-events.component';
-import { CategoryBeginComponent } from './pages/category-begin/category-begin.component';
-import { CategoryEventsComponent } from './pages/category-events/category-events.component';
+
 import { NotificationssComponent } from './pages/notificationss/notificationss.component';
 import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-and-conditions.component';
 import { PrivilegesComponent } from './pages/privileges/privileges.component';
-import { SliderBeginFormComponent } from './pages/sliderbegin/slider-begin-form/slider-begin-form.component';
+
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { SliderEventsFormComponent } from './pages/slider-events/slider-events-form/slider-events-form.component';
+
 import { TermAndConditionsFormComponent } from './pages/terms-and-conditions/term-and-conditions-form/term-and-conditions-form.component';
-import { CategoryBeginFormComponent } from './pages/category-begin/category-begin-form/category-begin-form.component';
-import { CategoryEventsFormComponent } from './pages/category-events/category-events-form/category-events-form.component';
+
 import { PrivilegesFormComponent } from './pages/privileges/privileges-form/privileges-form.component';
 import { LoginComponent } from './pages/login/login.component';
-import { DetailsModelosComponent } from './pages/modelos/details-modelos/details-modelos.component';
+
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFunctions,getFunctions } from '@angular/fire/functions';
-import { RecargasComponent } from './pages/recargas/recargas.component';
-import { ServiciosComponent } from './pages/servicios/servicios.component';
+
 import { ListNotificationsComponent } from './pages/notificationss/list-notifications/list-notifications.component';
+import { ClientesComponent } from './components/clientes/clientes.component';
+import { EmpleadosComponent } from './components/empleados/empleados.component';
+import { DistribuidoresComponent } from './components/distribuidores/distribuidores.component';
+import { DistribuidoresFormComponent } from './components/distribuidores/distribuidores-form/distribuidores-form.component';
+import { EmpleadosFormComponent } from './components/empleados/empleados-form/empleados-form.component';
+import { ServiciosFormComponent } from './components/servicios/servicios-form/servicios-form.component';
+import { ClientesFormComponent } from './components/clientes/clientes-form/clientes-form.component';
+import { RecargasFormComponent } from './components/recargas/recargas-form/recargas-form.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ServiciosComponent } from "./components/servicios/servicios.component";
+import { RecargasComponent } from "./components/recargas/recargas.component";
+import { ProfileComponent } from './components/profile/profile.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    ModelosComponent,
-    FormModelosComponent,
-    SliderbeginComponent,
-    SliderEventsComponent,
-    CategoryBeginComponent,
-    CategoryEventsComponent,
+    
     NotificationssComponent,
     TermsAndConditionsComponent,
     PrivilegesComponent,
-    SliderBeginFormComponent,
-    SliderEventsFormComponent,
+   
     TermAndConditionsFormComponent,
-    CategoryBeginFormComponent,
-    CategoryEventsFormComponent,
+    
     PrivilegesFormComponent,
     LoginComponent,
-    DetailsModelosComponent,
-    RecargasComponent,
+   
     ServiciosComponent,
+    RecargasComponent,
     ListNotificationsComponent,
+    ClientesComponent,
+    EmpleadosComponent,
+    DistribuidoresComponent,
+    DistribuidoresFormComponent,
+    EmpleadosFormComponent,
+    ServiciosFormComponent,
+    ClientesFormComponent,
+    RecargasFormComponent,
+    ProfileComponent,
+    ModalComponent,
+    
     
     
     
@@ -77,6 +89,7 @@ import { ListNotificationsComponent } from './pages/notificationss/list-notifica
     BrowserAnimationsModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
+    Ng2SearchPipeModule,
     FormsModule,
     RouterModule.forRoot(AppRoutes,{
       useHash: true
@@ -93,7 +106,8 @@ import { ListNotificationsComponent } from './pages/notificationss/list-notifica
     provideMessaging(() => getMessaging()),
     provideStorage(() => getStorage()),
     provideDatabase(() => getDatabase()),
-    provideFunctions(() => getFunctions())
+    provideFunctions(() => getFunctions()),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

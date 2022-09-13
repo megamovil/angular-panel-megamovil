@@ -1,0 +1,22 @@
+<div class="col-12 md">
+  <div class="d-flex justify-content-between align-items-center">
+    <input
+      type="text"
+      class="form-control m-50 mb-4 py-2"
+      [(ngModel)]="filterText"
+      placeholder="Buscador"
+    />
+    <button class="btn btn-primary ml-5" [routerLink]="['/Recargas/create']">Crear recarga</button>
+  </div>
+  <div class="row d-flex  " >
+    <div class="col card m-3" [style]="{'max-width':'350px'}" *ngFor="let recarga of recargas | filter:filterText" >
+      <img src="{{recarga.image}}" alt="" height="150px" />
+      <div [style]="{ display: 'flex' }" class="justify-content-between">
+        <button (click)="deleteData(recarga.id)" class="btn btn-primary"><i class="fa fa-trash"></i></button>
+        <p>{{ recarga.name }}</p>
+        <button class="btn btn-primary" [routerLink]="['/Recargas/edit/'+recarga.id]"><i class="fa fa-edit"></i></button>
+      </div>
+    </div>
+    
+  </div>
+</div>
