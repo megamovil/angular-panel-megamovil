@@ -13,14 +13,18 @@ import { IconsComponent }           from '../../pages/icons/icons.component';
 import { MapsComponent }            from '../../pages/maps/maps.component';
 import { NotificationsComponent }   from '../../pages/notifications/notifications.component';
 import { UpgradeComponent }         from '../../pages/upgrade/upgrade.component';
-
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MAT_DIALOG_DEFAULT_OPTIONS,MatDialogModule } from '@angular/material/dialog';
+import { ModalComponent } from 'app/components/modal/modal.component';
 
 @NgModule({
   imports: [
     CommonModule,
+    MatDialogModule,
     RouterModule.forChild(AdminLayoutRoutes),
     FormsModule,
+    MdbModalModule,
     NgbModule
   ],
   declarations: [
@@ -32,7 +36,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
-  ]
+  ],
+  providers: [ModalComponent,
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+  ],
+  entryComponents:[ModalComponent]
 })
 
 export class AdminLayoutModule {}

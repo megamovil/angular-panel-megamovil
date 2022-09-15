@@ -31,6 +31,7 @@ import { DistribuidoresFormComponent } from 'app/components/distribuidores/distr
 import { ServiciosComponent } from 'app/components/servicios/servicios.component';
 import { RecargasComponent } from 'app/components/recargas/recargas.component';
 import { ProfileComponent } from 'app/components/profile/profile.component';
+import { TiendaComponent } from 'app/components/tienda/tienda.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -38,6 +39,7 @@ export const AdminLayoutRoutes: Routes = [
   
     { path: 'Perfil',           component: ProfileComponent },
     { path: 'dashboard',      component: DashboardComponent },
+    { path: 'Tienda',           component: TiendaComponent },
     { path: 'Servicios',           component: ServiciosComponent },
     { path: 'Servicios/create',           component: ServiciosFormComponent },
     { path: 'Servicios/edit/:id',           component: ServiciosFormComponent },

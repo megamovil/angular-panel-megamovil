@@ -1,1 +1,38 @@
-<p>distribuidores works!</p>
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Distribuidores</h4>
+          <a class="btn btn-primary" [routerLink]="['/Distribuidores/create']">Crear Distribuidor</a>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Foto</th>
+                  <th>Nombre</th>
+                  <th>Teléfono</th>  
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let distribui of distribuidores">
+                  <td><img src="{{distribui.photo}}" alt="" height="70px"></td>
+                  <td>{{distribui.name}}</td>
+                  <td>{{distribui.phone}}</td>
+                   
+                  <td><a class="btn btn-primary" [routerLink]="['/Distribuidores/edit/'+distribui.id]">Editar</a></td>
+                  <td><a class="btn btn-primary" (click)="delete(distribui.id)">Eliminar</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    
+  </div>
+  

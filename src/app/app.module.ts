@@ -51,6 +51,9 @@ import { RecargasComponent } from "./components/recargas/recargas.component";
 import { ProfileComponent } from './components/profile/profile.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
+import { TiendaComponent } from './components/tienda/tienda.component';
+
 
 
 @NgModule({
@@ -80,6 +83,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RecargasFormComponent,
     ProfileComponent,
     ModalComponent,
+    TiendaComponent,
+   
     
     
     
@@ -90,6 +95,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AngularFirestoreModule,
     AngularFireStorageModule,
     Ng2SearchPipeModule,
+    MdbModalModule,
     FormsModule,
     RouterModule.forRoot(AppRoutes,{
       useHash: true

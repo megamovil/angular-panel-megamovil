@@ -1,1 +1,68 @@
-<p>distribuidores-form works!</p>
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">{{ title }}</h4>
+        </div>
+        <div class="card-body">
+          <form novalidate (ngSubmit)="handle()">
+            
+            <!-- <div class="col-4">
+              <label for="name">Nombre</label>
+              <input
+                type="text"
+                [(ngModel)]="sliderBegin."
+                class="form-control"
+                placeholder="Nombre"
+              />
+            </div> -->
+            <div class="col">
+                <label for="">Nombre</label>
+                <input type="text" name="nombre" placeholder="Nombre" [(ngModel)]="distribuidor.name" class="form-control">
+            </div>
+            <div class="col">
+                <label for="">Correo</label>
+                <input type="text" name="correo" placeholder="Correo electronico" [(ngModel)]="distribuidor.email" class="form-control">
+            </div>
+            <div class="col">
+                <label for="">Titulo</label>
+                <input type="text" placeholder="Titulo" name="titulo" [(ngModel)]="distribuidor.tituloCargo" class="form-control">
+            </div>
+            <div class="col">
+                <label for="">Teléfono</label>
+                <input type="text" placeholder="Teléfono" name="telefono" [(ngModel)]="distribuidor.phone" class="form-control">
+            </div>
+            <div class="col">
+                <label for="">Nombre de usuario</label>
+                <input type="text" placeholder="Nombre de usuario" name="user" [(ngModel)]="distribuidor.user" class="form-control">
+            </div>
+            <div class="col">
+                <label for="">contraseña</label>
+                <input type="text" placeholder="Contraseña" name="password" [(ngModel)]="distribuidor.email" class="form-control">
+            </div>
+            <div class="col">
+              <label for="name">Subir Foto </label>
+              <div>
+                <input
+                  type="file"
+                  (change)="changeFile($event)"
+                  class="file-input"
+                  placeholder="Ingrese su imagen"
+                />
+              </div>
+              
+            </div>
+            <br />
+            <div class="col">
+              <img src="{{ distribuidor.photo }}" alt="" height="100" />
+            </div>
+  
+            <button type="submit" class="btn btn-primary">
+              Enviar
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Injectable } from '@angular/core';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 
 @Component({
@@ -6,8 +6,9 @@ import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss']
 })
-export class ModalComponent implements OnInit {
 
+export class ModalComponent implements OnInit {
+  @Input() name;
   constructor(public modalRef: MdbModalRef<ModalComponent>) { }
 
   ngOnInit(): void {
