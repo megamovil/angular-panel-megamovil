@@ -35,8 +35,10 @@ export class RecargasComponent implements OnInit {
     console.log(this.recargas)
   }
   async deleteData(id){
+    console.log(id)
     const resp = await this.api.delete(this.collection,id);
     if(resp){
+      this.recargas =[];
       this.getData();
       console.log("borrado");
     }

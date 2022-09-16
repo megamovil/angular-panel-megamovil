@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Recarga } from 'app/models/recarga';
 import { ApiService } from 'app/services/api.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-recargas-form',
@@ -11,7 +12,7 @@ import { ApiService } from 'app/services/api.service';
 export class RecargasFormComponent implements OnInit {
 
   constructor(private api: ApiService,private router: Router,
-    private aRouter: ActivatedRoute) { 
+    private aRouter: ActivatedRoute,private toastr:ToastrService) { 
       this.id = this.aRouter.snapshot.paramMap.get("id");
     }
 
@@ -58,7 +59,9 @@ export class RecargasFormComponent implements OnInit {
   
   async create(){
     const resp = await this.api.create(this.collection,this.servicio);
+    
     if(resp){
+      this.toastr.success("Recarga creada","Informe");
       this.router.navigate(['Recargas']);
     }
   }
@@ -78,6 +81,7 @@ export class RecargasFormComponent implements OnInit {
     try{
       const resp = await this.api.update(this.collection,this.id,this.servicio);
       this.router.navigate(['/Servicios']);
+      this.toastr.success("Recarga editada","Informe");
     }catch(e){
       console.log(e)
     }

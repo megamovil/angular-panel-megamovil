@@ -3,7 +3,16 @@
       <div class="card">
         <div class="card-header">
           <h4 class="card-title">Distribuidores</h4>
-          <a class="btn btn-primary" [routerLink]="['/Distribuidores/create']">Crear Distribuidor</a>
+          <div class="d-flex align-items-center">
+            <input
+          type="text"
+          class="form-control m-50 mb-4 py-2"
+          [(ngModel)]="filterText"
+          placeholder="Buscador"
+        />
+          <a class="btn btn-primary ml-3" [routerLink]="['/Distribuidores/create']">Crear Distribuidor</a>
+          </div>
+          
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -18,13 +27,19 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let distribui of distribuidores">
+                <tr *ngFor="let distribui of distribuidores | filter: filterText">
                   <td><img src="{{distribui.photo}}" alt="" height="70px"></td>
                   <td>{{distribui.name}}</td>
                   <td>{{distribui.phone}}</td>
                    
                   <td><a class="btn btn-primary" [routerLink]="['/Distribuidores/edit/'+distribui.id]">Editar</a></td>
-                  <td><a class="btn btn-primary" (click)="delete(distribui.id)">Eliminar</a></td>
+                  <td><a class="btn btn-danger" (click)="deleteData(distribui.id)">Eliminar</a></td>
+                  <td>
+                    <button *ngIf="distribui.active == false" class="btn btn-success" (click)="activate(distribui.id,distribui)" >Activar</button>
+                    <button *ngIf="distribui.active == true" class="btn btn-primary" (click)="activate(distribui.id,distribui)" >Desactivar</button>
+                  </td>
+
+
                 </tr>
               </tbody>
             </table>

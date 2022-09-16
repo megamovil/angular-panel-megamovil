@@ -37,6 +37,7 @@ export class ServiciosComponent implements OnInit {
   async deleteData(id){
     const resp = await this.api.delete(this.collection,id);
     if(resp){
+      this.servicios = [];
       this.getData();
       console.log("borrado");
     }

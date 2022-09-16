@@ -1,13 +1,12 @@
 <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">
-          <h4 class="card-title">{{ title }}</h4>
-        </div>
-        <div class="card-body">
-          <form novalidate (ngSubmit)="handle()">
-            
-            <!-- <div class="col-4">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">{{ title }}</h4>
+      </div>
+      <div class="card-body">
+        <form novalidate (ngSubmit)="handle()">
+          <!-- <div class="col-4">
               <label for="name">Nombre</label>
               <input
                 type="text"
@@ -16,53 +15,105 @@
                 placeholder="Nombre"
               />
             </div> -->
-            <div class="col">
-                <label for="">Nombre</label>
-                <input type="text" name="nombre" placeholder="Nombre" [(ngModel)]="distribuidor.name" class="form-control">
-            </div>
-            <div class="col">
-                <label for="">Correo</label>
-                <input type="text" name="correo" placeholder="Correo electronico" [(ngModel)]="distribuidor.email" class="form-control">
-            </div>
-            <div class="col">
-                <label for="">Titulo</label>
-                <input type="text" placeholder="Titulo" name="titulo" [(ngModel)]="distribuidor.tituloCargo" class="form-control">
-            </div>
-            <div class="col">
-                <label for="">Teléfono</label>
-                <input type="text" placeholder="Teléfono" name="telefono" [(ngModel)]="distribuidor.phone" class="form-control">
-            </div>
-            <div class="col">
-                <label for="">Nombre de usuario</label>
-                <input type="text" placeholder="Nombre de usuario" name="user" [(ngModel)]="distribuidor.user" class="form-control">
-            </div>
-            <div class="col">
-                <label for="">contraseña</label>
-                <input type="text" placeholder="Contraseña" name="password" [(ngModel)]="distribuidor.email" class="form-control">
-            </div>
-            <div class="col">
-              <label for="name">Subir Foto </label>
-              <div>
-                <input
-                  type="file"
-                  (change)="changeFile($event)"
-                  class="file-input"
-                  placeholder="Ingrese su imagen"
-                />
-              </div>
+          <div class="col">
+            <label for="">Nombre</label>
+            <input
+              type="text"
+              name="nombre"
+              placeholder="Nombre"
+              [(ngModel)]="distribuidor.name"
+              class="form-control"
+            />
+          </div>
+          <div class="col">
+            <label for="">Correo</label>
+            <input
+              type="text"
+              name="correo"
+              placeholder="Correo electronico"
+              [(ngModel)]="distribuidor.email"
+              class="form-control"
+            />
+          </div>
+          <div class="col">
+            <label for="">Nombre de negocio</label>
+            <input
+              type="text"
+              placeholder="Nombre de negocio"
+              name="nameOfBusiness"
+              [(ngModel)]="distribuidor.nameOfBusiness"
+              class="form-control"
+            />
+          </div>
+          <div class="col">
+            <label for="">Teléfono</label>
+            <input
+              type="text"
+              placeholder="Teléfono"
+              name="telefono"
+              [(ngModel)]="distribuidor.phone"
+              class="form-control"
+            />
+          </div>
+          <div class="col">
+            <label for="">contraseña</label>
+            <input
+              type="text"
+              placeholder="Contraseña"
+              name="password"
+              [(ngModel)]="distribuidor.password"
+              class="form-control"
+            />
+          </div>
+          <div class="col">
+            <label for="">Estado</label>
+            <select class="form-control" [(ngModel)]="distribuidor.estado"  name="" id="">
               
+              <option *ngFor="let esta of estados" value="{{esta.name}}">{{esta.name}}</option>
+            </select>
+          </div>
+          <div class="col">
+            <label for="name">Subir Foto </label>
+            <div>
+              <input
+                type="file"
+                (change)="changeFile($event)"
+                class="file-input"
+                placeholder="Ingrese su imagen"
+              />
             </div>
-            <br />
-            <div class="col">
-              <img src="{{ distribuidor.photo }}" alt="" height="100" />
+          </div>
+          <br />
+          <div class="col">
+            <img src="{{ distribuidor.photo }}" alt="" height="100" />
+          </div>
+
+          <h6>Proveedores de servicios</h6>
+          <div class="col d-flex mb-4">
+            <div *ngFor="let serv of servicios" class="col-4">
+              <div class="d-flex">
+                <img src="{{serv.image}}" height="50px" width="50px" alt="" class="mx-2">
+                <input [checked]="validCheckedServicios(serv.id)" (change)="changeCheckBoxServicios($event)" class="form-check-input" value="{{serv.id}}" type="checkbox" name="servicio"/> {{serv.name}}
+              </div>  
+             
             </div>
-  
-            <button type="submit" class="btn btn-primary">
-              Enviar
-            </button>
-          </form>
-        </div>
+           
+          </div>
+          <h6>Proveedores de recargas</h6>
+          <div class="col d-flex">
+            <div *ngFor="let rec of recargas" class="col-4">
+              <div class="d-flex">
+                <img src="{{rec.image}}" height="50px" width="50px" class="mx-2" alt="">
+                <input [checked]="validCheckedRecargas(rec.id)" (change)="changeCheckBoxRecargas($event)"  class="form-check-input" value="{{rec.id}}" type="checkbox" name="{{rec.name}}"/> {{rec.name}}
+              </div>  
+             
+            </div>
+           
+          </div>  
+
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
       </div>
     </div>
   </div>
-  
+</div>
